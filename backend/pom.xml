@@ -80,10 +80,56 @@
             <artifactId>jackson-module-kotlin</artifactId>
         </dependency>
 
+        <!-- JWT -->
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-api</artifactId>
+            <version>0.12.6</version>
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-impl</artifactId>
+            <version>0.12.6</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-jackson</artifactId>
+            <version>0.12.6</version>
+            <scope>runtime</scope>
+        </dependency>
+
+        <!-- Swagger / OpenAPI -->
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+            <version>2.8.9</version>
+        </dependency>
+
         <!-- Testing -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.mockito</groupId>
+                    <artifactId>mockito-core</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>io.mockk</groupId>
+            <artifactId>mockk-jvm</artifactId>
+            <version>1.13.13</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ninja-squad</groupId>
+            <artifactId>springmockk</artifactId>
+            <version>4.0.2</version>
             <scope>test</scope>
         </dependency>
 
@@ -113,6 +159,9 @@
 
                 <configuration>
                     <jvmTarget>21</jvmTarget>
+                    <args>
+                        <arg>-Xjsr305=strict</arg>
+                    </args>
                     <compilerPlugins>
                         <plugin>spring</plugin>
                         <plugin>jpa</plugin>
