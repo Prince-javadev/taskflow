@@ -1,9 +1,37 @@
+# Environment secrets
 .env
+
+# Maven
+backend/target/
+
+# IntelliJ IDEA
 .idea/
 *.iml
+*.iws
+*.ipr
+out/
+
+# Eclipse / STS
+.apt_generated/
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans
+.sts4-cache/
+bin/
+
+# VS Code
+.vscode/
+
+# Kotlin
+.kotlin/
+
+# Operating system
 .DS_Store
-backend/build/
-backend/.gradle/
+Thumbs.db
+
+# Frontend
 frontend/node_modules/
 frontend/dist/
 frontend/coverage/
